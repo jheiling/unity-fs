@@ -12,7 +12,7 @@ open UnityEngine.UI
 type CoroutineExample () =
     inherit MonoBehaviour ()
 
-    let [<SerializeField>] waitTime = 1.f
+    let [<SerializeField>] wait = 1.f
     let [<SerializeField>] (ui : Text) = null
 
     let display text =
@@ -20,11 +20,11 @@ type CoroutineExample () =
         | Exists -> ui.text <- text
         | Missing -> Debug.Log text
 
-    let rec coroutine waitTime = 
+    let rec coroutine wait = 
         seq {
-            yield WaitForSeconds waitTime
+            yield WaitForSeconds wait
             "Time: " + Time.time.ToString () |> display
-            yield! coroutine waitTime
+            yield! coroutine wait
         }
 
-    member private this.Start () = coroutine waitTime |> Coroutine.start this |> ignore
+    member private this.Start () = coroutine wait |> Coroutine.start this |> ignore
