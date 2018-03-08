@@ -1,12 +1,9 @@
 namespace UnityFs
 
-open UnityEngine
-
 
 
 module Object =
-    let inline exists (obj : Object) = not (obj = null) && not (obj.Equals null)
-
+    let inline exists obj = not (obj = null) && not (obj.Equals null)
 
 
 
