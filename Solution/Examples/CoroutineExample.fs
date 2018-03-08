@@ -14,6 +14,7 @@ type CoroutineExample () =
 
     let [<SerializeField>] mutable wait = 1.f
     let [<SerializeField>] mutable (ui : Text) = null
+    let mutable running = None
 
     let display text =
         match ui with
@@ -27,4 +28,6 @@ type CoroutineExample () =
             yield! coroutine yieldInstruction
         }
 
-    member private this.Start () = WaitForSeconds wait |> coroutine |> Coroutine.start this |> ignore
+    member private this.OnEnable () = running <- WaitForSeconds wait |> coroutine |> Coroutine.start this |> Some
+
+    member private __.OnDisable () = Option.iter Coroutine.stop running
