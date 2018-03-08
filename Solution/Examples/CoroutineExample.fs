@@ -12,8 +12,8 @@ open UnityEngine.UI
 type CoroutineExample () =
     inherit MonoBehaviour ()
 
-    let [<SerializeField>] wait = 1.f
-    let [<SerializeField>] (ui : Text) = null
+    let [<SerializeField>] mutable wait = 1.f
+    let [<SerializeField>] mutable (ui : Text) = null
 
     let display text =
         match ui with
