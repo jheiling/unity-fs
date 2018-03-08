@@ -20,11 +20,11 @@ type CoroutineExample () =
         | Exists -> ui.text <- text
         | Missing -> Debug.Log text
 
-    let rec routine waitTime = 
+    let rec coroutine waitTime = 
         seq {
             yield WaitForSeconds waitTime
             "Time: " + Time.time.ToString () |> display
-            yield! routine waitTime
+            yield! coroutine waitTime
         }
 
-    member private __.Start () = routine waitTime |> MonoBehaviour.startCoroutine
+    member private this.Start () = coroutine waitTime |> Coroutine.start this |> ignore

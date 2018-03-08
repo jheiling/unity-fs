@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <Compile Include="Object.fs" />
-    <Compile Include="MonoBehaviour.fs" />
+    <Compile Include="Coroutine.fs" />
   </ItemGroup>
 
   <ItemGroup>
