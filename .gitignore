@@ -13,3 +13,4 @@ Solution/*.meta
 Solution/*/*.meta
 *obj
 *obj.meta
+.vs
