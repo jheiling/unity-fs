@@ -20,11 +20,11 @@ type CoroutineExample () =
         | Exists -> ui.text <- text
         | Missing -> Debug.Log text
 
-    let rec coroutine wait = 
+    let rec coroutine yieldInstruction = 
         seq {
-            yield WaitForSeconds wait
+            yield yieldInstruction
             "Time: " + Time.time.ToString () |> display
-            yield! coroutine wait
+            yield! coroutine yieldInstruction
         }
 
-    member private this.Start () = coroutine wait |> Coroutine.start this |> ignore
+    member private this.Start () = WaitForSeconds wait |> coroutine |> Coroutine.start this |> ignore

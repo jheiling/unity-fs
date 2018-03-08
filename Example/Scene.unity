@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wait: 1
-  ui: {fileID: 0}
+  ui: {fileID: 1910424425}
 --- !u!4 &1380352709
 Transform:
   m_ObjectHideFlags: 0
