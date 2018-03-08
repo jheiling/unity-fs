@@ -28,6 +28,9 @@ type CoroutineExample () =
             yield! coroutine yieldInstruction
         }
 
-    member private this.OnEnable () = running <- WaitForSeconds wait |> coroutine |> Coroutine.start this |> Some
+    member private this.OnEnable () = 
+        running <- WaitForSeconds wait |> coroutine |> Coroutine.start this |> Some
 
-    member private __.OnDisable () = Option.iter Coroutine.stop running
+    member private __.OnDisable () = 
+        Option.iter Coroutine.stop running
+        running <- None
