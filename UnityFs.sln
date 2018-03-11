@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "UnityFs", "UnityFs\UnityFs.fsproj", "{75191B00-F6B0-40C5-AFB5-7F1E1D69EBBB}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "UnityFs.Examples", "UnityFs.Examples\UnityFs.Examples.fsproj", "{0003D3ED-8A68-4F93-B024-469AB7AB75B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{34DC93CB-C118-475A-A788-92822CC6BF41}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+		setup.cmd = setup.cmd
+		setup.fsx = setup.fsx
+		setup.sh = setup.sh
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75191B00-F6B0-40C5-AFB5-7F1E1D69EBBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75191B00-F6B0-40C5-AFB5-7F1E1D69EBBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75191B00-F6B0-40C5-AFB5-7F1E1D69EBBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75191B00-F6B0-40C5-AFB5-7F1E1D69EBBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0003D3ED-8A68-4F93-B024-469AB7AB75B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0003D3ED-8A68-4F93-B024-469AB7AB75B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0003D3ED-8A68-4F93-B024-469AB7AB75B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0003D3ED-8A68-4F93-B024-469AB7AB75B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D3726C0-2302-4CD5-B0C2-17EEACDD477E}
+	EndGlobalSection
+EndGlobal
