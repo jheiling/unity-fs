@@ -15,15 +15,11 @@ type CoroutineExample () =
     let [<SerializeField>] mutable wait = 1.f
     let [<SerializeField>] mutable (ui : Text) = null
 
-    let display text =
-        match ui with
-        | Exists -> ui.text <- text
-        | Missing -> Debug.Log text
-
     let rec coroutine yieldInstruction = 
         seq {
             yield yieldInstruction
-            "Time: " + Time.time.ToString () |> display
+            let text = "Time: " + Time.time.ToString ()
+            if exists ui then ui.text <- text else Debug.Log text
             yield! coroutine yieldInstruction
         }
 
