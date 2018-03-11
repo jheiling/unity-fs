@@ -1,24 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-  </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <OutputPath>..\..\Plugins\</OutputPath>
+        <DefineConstants>TRACE;RELEASE;NETSTANDARD2_0</DefineConstants>
+    </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>..\..\Plugins\</OutputPath>
-    <DefineConstants>TRACE;RELEASE;NETSTANDARD2_0;RELEASE;NETSTANDARD2_0;RELEASE;NETSTANDARD2_0;RELEASE;NETSTANDARD2_0</DefineConstants>
-  </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="Object.fs" />
+        <Compile Include="Coroutine.fs" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <Compile Include="Object.fs" />
-    <Compile Include="Coroutine.fs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="UnityEngine">
-      <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEngine.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-  </ItemGroup>
-
+    <ItemGroup>
+        <Reference Include="UnityEngine">
+            <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEngine.dll</HintPath>
+            <Private>false</Private>
+        </Reference>
+    </ItemGroup>
 </Project>

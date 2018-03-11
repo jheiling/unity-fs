@@ -2,9 +2,9 @@ namespace UnityFs.Examples
 
 #nowarn "1182"
 
-open UnityFs
 open UnityEngine
 open UnityEngine.UI
+open UnityFs
 
 
 
@@ -15,12 +15,11 @@ type CoroutineExample () =
     let [<SerializeField>] mutable wait = 1.f
     let [<SerializeField>] mutable (ui : Text) = null
 
-    let rec coroutine yieldInstruction = 
-        seq {
-            yield yieldInstruction
-            let text = "Time: " + Time.time.ToString ()
-            if exists ui then ui.text <- text else Debug.Log text
-            yield! coroutine yieldInstruction
-        }
+    let rec run () = seq {
+        yield WaitForSeconds wait
+        let text = "Time: " + Time.time.ToString ()
+        if exists ui then ui.text <- text else Debug.Log text
+        yield! run ()
+    }
 
-    member private this.Awake () = WaitForSeconds wait |> coroutine |> Coroutine.start this |> ignore
+    member private this.Awake () = run () |> Coroutine.start this |> ignore
